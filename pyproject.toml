@@ -1,0 +1,25 @@
+[build-system] 
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hexlet-code"
+version = "0.1.0"
+description = "A tool to compare configuration files and show differences"
+authors = [
+    { name = "Maxim Toropov", email = "maxtor2008@mail.ru" }
+]
+license = { text = "MIT" }
+dependencies = [
+    "pyyaml",
+    "json",
+]
+
+[project.scripts]
+gendiff = "hexlet_code.scripts.gendiff:main"
+
+[tool]
+[tool.ruff]
+select = ["E", "F"]
+ignore = ["W503"]
+exclude = ["tests/test_*.py"]
